@@ -53,6 +53,7 @@ src/
 ### Prerequisites
 - Java 21+
 - Gradle
+- RabbitMQ server running (default port 5672)
 
 ### Build & Run
 ```bash
@@ -65,12 +66,15 @@ src/main/resources/application.yml
 
 # build and run
 ./gradlew bootRun
+
+#access the API endpoint at:
+http://localhost:8080/warehouse
 ```
 
 ---
 
 ## Communication Flow
-Storefront Service --(Message: StockUpdateEvent)--> [RabbitMQ Queue] --> [Warehouse Service]
+Storefront Service --(Message: StockStatusMessage)--> [RabbitMQ Queue] --> [Warehouse Service]
 
 ---
 
