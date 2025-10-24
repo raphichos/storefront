@@ -33,15 +33,17 @@ The system follows a **microservice architecture**, where each service is indepe
 ```bash
 src/
 └── main/
-├── java/com/raphael/storefront/
-│   ├── controller/request/response       # REST endpoints
-│   ├── service/                          # Business logic interfaces
-│   ├── service/impl/                     # Implementations
-│   ├── mapper/                           # DTO–Entity conversion
-│   ├── producer/                         # RabbitMQ message producer
-│   └── repository/                       # Entities and DTOs
+├── java/br/com/dio/storefront/
+│   ├── config/        # RabbitMQ and environment configuration
+│   ├── controller/    # REST controllers (API endpoints)
+│   ├── dto/           # Data Transfer Objects
+│   ├── entity/        # JPA entities
+│   ├── mapper/        # Entity ↔ DTO mappers
+│   ├── repository/    # Spring Data repositories
+│   └── service/       # Business logic and message consumers
 └── resources/
-└── application.properties
+├── application.yml
+└── application-dev.yml
 ```
 
 ---
